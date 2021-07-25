@@ -4,6 +4,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -18,7 +19,7 @@ of claims along with some other details like token issued date time, expiry time
 3. JWT uses builder pattern to create a token using HS256 signature algo
  */
 
-
+@Service
 public class JwtUtil {
     private String SECRET_KEY = "secret";
 

@@ -15,16 +15,13 @@ import java.util.Arrays;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
     @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
        // User will be returned from user credential store -
         // ldap / db/ s3 / vault
 
         /* fake service to provide user credentials */
-        return new User("Ajay", "abcd", Arrays.asList());
+
+            return new User(username, "abcd", Arrays.asList());
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder(){
-        return NoOpPasswordEncoder.getInstance();
-    }
 }
